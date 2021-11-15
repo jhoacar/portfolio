@@ -4,22 +4,29 @@
 		The Send Mail php Script for Contact Form
 		Server-side data validation is also added for good data validation.
 	*/
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    
+    $errorname    = $lang=='es'? 'Porfavor ingrese su nombre':'Please enter your name.';
+    $erroremail   = $lang=='es'? 'Porfavor ingrese un correo valido':'Please enter a valid email address.';
+    $errorsubject = $lang=='es'? 'Porfavor ingrese un asunto':'Please enter yout subject.';
+    $errormessage = $lang=='es'? 'El mensaje es un campo requerido':'The message field is required!';
 	
 	$data['error'] = false;
-	
+
+    
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$subject = $_POST['subject'];
 	$message = $_POST['message'];
-	
+
 	if( empty($name) ){
-		$data['error'] = 'Please enter your name.';
+		$data['error'] = $errorname;
 	}else if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
-		$data['error'] = 'Please enter a valid email address.';
+		$data['error'] = $erroremail;
 	}else if( empty($subject) ){
-		$data['error'] = 'Please enter your subject.';
+		$data['error'] = $errorsubject;
 	}else if( empty($message) ){
-		$data['error'] = 'The message field is required!';
+		$data['error'] = $errormessage;
 	}else{
 		
 		$formcontent="From: $name<br>Subject: $subject<br>Email: $email<br>Message: $message";
