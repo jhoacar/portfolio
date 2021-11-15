@@ -24,45 +24,36 @@
 		
 		$formcontent="From: $name\nSubject: $subject\nEmail: $email\nMessage: $message";
 		
-		
 		//Place your Email Here
 		$recipient = "jhoancarrero123@gmail.com";
 		
-		$mailheader = "From: $email";
-		
-		$mail = new PHPMailer();
-		//indico a la clase que use SMTP
-		$mail->IsSMTP();
-		//permite modo debug para ver mensajes de las cosas que van ocurriendo
-		$mail->SMTPDebug = 2;
-		//Debo de hacer autenticación SMTP
-		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "ssl";
-		//indico el servidor de Gmail para SMTP
-		$mail->Host = "smtp.gmail.com";
-		//indico el puerto que usa Gmail
-		$mail->Port = 465;
-		//indico un usuario / clave de un usuario de gmail
-		$mail->Username = "jhoancarrero123@gmail.com";
-		$mail->Password = "carreropineda";
-		$mail->SetFrom('jhoancarrero123@gmail.com', 'Jhoan Carrero');
-		$mail->AddReplyTo("jhoancarrero123@gmail.com","Jhoan Carrero");
-		$mail->Subject = $subject;
-		$mail->MsgHTML($message);
-		//indico destinatario
-		$mail->AddAddress($email, $name);
-		if(!$mail->Send()) {
-			$data['error'] = "Error al enviar: " . $mail->ErrorInfo;
-		} else {
-			$data['error'] = false;
-		} 
-		
-		//if( mail($recipient, $name, $formcontent, $mailheader) == false ){
-		//	
-		//}else{
-		//	
-		}
-	
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $_ENV['TRUSTIFI_URL'] . "/api/i/v1/email",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS =>"{\"recipients\":[{\"email\":\"$recipient\"}],\"title\":\"$subject\",\"html\":\"$formcontent\"}",
+            CURLOPT_HTTPHEADER => array(
+                "x-trustifi-key: " . $_ENV['TRUSTIFI_KEY'],
+                "x-trustifi-secret: " . $_ENV['TRUSTIFI_SECRET'],
+                "content-type: application/json"
+            )
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        if ($err) {
+            $data['error'] = "cURL Error #:" . $err;
+        } else {
+            $data['error'] = false;
+        }
+        	
 	}
 	
 	echo json_encode($data);
