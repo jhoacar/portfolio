@@ -22,7 +22,7 @@
 		$data['error'] = 'The message field is required!';
 	}else{
 		
-		$formcontent="From: $name\nSubject: $subject\nEmail: $email\nMessage: $message";
+		$formcontent="From: $name<br>Subject: $subject<br>Email: $email<br>Message: $message";
 		
 		//Place your Email Here
 		$recipient = "jhoancarrero123@gmail.com";
