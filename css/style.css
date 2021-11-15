@@ -1438,6 +1438,7 @@ body.loaded #preloader .loader {
 	transition: all 1s ease-in-out;
 	z-index: 5;
 	margin-top: 10px;
+	width: 50%;
 }
 
 @keyframes morph {
