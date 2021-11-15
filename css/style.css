@@ -278,11 +278,18 @@ body.border-dark .main-content:after {
 	font-style: italic;
 	letter-spacing: 2px;
 }
-.intro-text > .intro-btns {
-	margin-top: 45px;
+.intro-text  .intro-btns {
+	margin-top: 0px;
 }
-.intro-text > .intro-btns > .btn-custom {
+.intro-text .intro-btns .btn-custom {
 	margin: 0 15px;
+}
+.intro-text .intro-text-container{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-bottom: 10px;
 }
 a.btn-custom {
 	color: #fff;
@@ -1378,13 +1385,13 @@ body.loaded #preloader .loader {
 		right: 0;
 		bottom: 0;
 	}
-	.about-btns > .btn-custom {
+	.about-btns .btn-custom {
 		margin-bottom: 10px;
 	}
-	.intro-text > .intro-btns > .btn-custom {
+	.intro-text .intro-btns .btn-custom {
 		margin-bottom: 10px;
 	}
-	.intro-text > h1 {
+	.intro-text h1 {
 		font-size: 62px;
 	}
 }
@@ -1396,6 +1403,9 @@ body.loaded #preloader .loader {
 		padding: 70px;
 		padding-top: 0;
 	}
+	.intro-text .intro-text-container{
+		flex-direction: column;
+	}
 }
 @media (max-width: 400px) {
 	.section {
@@ -1404,6 +1414,9 @@ body.loaded #preloader .loader {
 	.section-block {
 		padding: 40px;
 		padding-top: 0;
+	}
+	.intro-text .intro-text-container{
+		flex-direction: column;
 	}
 }
 
@@ -1422,10 +1435,9 @@ body.loaded #preloader .loader {
 	animation: morph 8s ease-in-out infinite;
 	border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 	border:solid 3px white;
-	height: 400px;
 	transition: all 1s ease-in-out;
-	width: 400px;
 	z-index: 5;
+	margin-top: 10px;
 }
 
 @keyframes morph {
