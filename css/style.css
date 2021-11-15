@@ -1406,6 +1406,9 @@ body.loaded #preloader .loader {
 	.intro-text .intro-text-container{
 		flex-direction: column;
 	}
+	.shape{
+		width: 50%;
+	}
 }
 @media (max-width: 400px) {
 	.section {
@@ -1417,6 +1420,9 @@ body.loaded #preloader .loader {
 	}
 	.intro-text .intro-text-container{
 		flex-direction: column;
+	}
+	.shape{
+		width: 50%;
 	}
 }
 
@@ -1438,7 +1444,6 @@ body.loaded #preloader .loader {
 	transition: all 1s ease-in-out;
 	z-index: 5;
 	margin-top: 10px;
-	width: 50%;
 }
 
 @keyframes morph {
