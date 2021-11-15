@@ -1,21 +1,14 @@
 <?php 
-
-$lang = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-switch($lang) {
-    case "de-DE":
-        break;
-    case "es-ES":
+$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+switch ($lang){
+    case "es":
         require_once("index.spanish.html");
         break;
-    case "cn-CN":
-        break;
-    case "fr-FR":
-        break;
-    case "en-US":
+    case "en":
         require_once("index.english.html");
         break;
     default:
-        require_once("index.english.html");
+        require_once("index.default.html");
         break;
 }
 ?>
