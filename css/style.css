@@ -1201,7 +1201,7 @@ body.section-switching.up .animation-block {
 .contact-info:after {
 	clear: both;
 }
-.contact-info > i {
+.contact-info i {
 	width: 60px;
 	display: block;
 	float: left;
