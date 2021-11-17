@@ -78,6 +78,11 @@ h6 {
 img {
 	max-width: 100%;
 }
+a:hover,a:visited, a:link, a:visited{
+	text-decoration: none;
+	border:none;
+	outline: none;
+}
 
 /*=======================================================
 	Menu
@@ -1211,9 +1216,7 @@ body.section-switching.up .animation-block {
 	font-size: 30px;
 	color: #303f9f;
 }
-.contact-info a, 
-.contact-info a:link,
-.contact-info a:visited
+.contact-info a
 {
 	text-decoration: none;
 	width: 30px;
@@ -1223,12 +1226,8 @@ body.section-switching.up .animation-block {
 	margin-right: 10px;
 	color: #303f9f;
 }
-a:link, a:visited{
-	text-decoration: none;
-}
 
-
-.contact-info > p {
+.contact-info p{
 	float: left;
 	font-size: 16px;
 	line-height: 1.6em;
