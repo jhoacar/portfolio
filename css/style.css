@@ -1171,6 +1171,9 @@ body.section-switching.up .animation-block {
 .form-group {
 	margin-bottom: 20px;
 }
+.form-group textarea{
+	resize: none;
+}
 .form-control {
 	padding: 14px;
 	height: auto;
@@ -1202,12 +1205,29 @@ body.section-switching.up .animation-block {
 	clear: both;
 }
 .contact-info i {
-	width: 60px;
-	display: block;
+	width: 40px;
+	display: flex;
 	float: left;
-	font-size: 52px;
+	font-size: 30px;
 	color: #303f9f;
 }
+.contact-info a, 
+.contact-info a:link,
+.contact-info a:visited
+{
+	text-decoration: none;
+	width: 30px;
+	display: flex;
+	float: left;
+	font-size: 30px;
+	margin-right: 10px;
+	color: #303f9f;
+}
+a:link, a:visited{
+	text-decoration: none;
+}
+
+
 .contact-info > p {
 	float: left;
 	font-size: 16px;
