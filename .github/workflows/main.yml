@@ -40,10 +40,12 @@ jobs:
       -  
         name: Checkout Files of Github
         uses: actions/checkout@v2
-        - run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/host_key
-          scp -i ~/.ssh/host_key -p ${{ secrets.SSH_PORT }} docker-compose.yaml ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-          ssh -i ~/.ssh/host_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'entre por github' > ~/entre.txt ";
+      -
+        name: Copy DockerCompose file and Check with host 
+        run: |
+              echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/host_key
+              scp -i ~/.ssh/host_key -p ${{ secrets.SSH_PORT }} docker-compose.yaml ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
+              ssh -i ~/.ssh/host_key -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'entre por github' > ~/entre.txt "
       # - 
       #   name: Copy docker-compose file via SSH Key
       #   uses: appleboy/scp-action@master
