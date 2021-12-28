@@ -1,4 +1,10 @@
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 name: deploy
 jobs:
   build-and-push:
@@ -25,4 +31,14 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:v1.0.${{ github.run_number }},${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest
-
+      - 
+        name: Connecting to Google Cloud
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            whoami
+            ls -al
