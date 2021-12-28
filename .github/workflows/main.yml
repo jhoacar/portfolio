@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 name: deploy
 jobs:
   build-and-push:
