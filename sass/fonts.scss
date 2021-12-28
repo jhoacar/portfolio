@@ -1,0 +1,25 @@
+/* Muller each font-face weight declarations*/
+@font-face {
+  font-family: 'Muller';
+  src: url('/fonts/Muller-Regular/MullerRegular.woff') format('woff'),
+    url('/fonts/Muller-Regular/MullerRegular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Muller';
+  src: url('/fonts/Muller-Bold/MullerBold.woff') format('woff'),
+    url('/fonts/Muller-Bold/MullerBold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+// @font-face {
+//   font-family: 'Muller';
+//   src: url('/fonts/Muller-ExtraBlod/MullerExtraBold.woff') format('woff'),
+//     url('/fonts/Muller-ExtraBlod/MullerExtraBold.ttf') format('ttf');
+//   font-style: normal;
+//   font-weight: 800;
+//   font-display: swap;
+// }

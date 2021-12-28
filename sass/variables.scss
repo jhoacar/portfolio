@@ -1,0 +1,54 @@
+@import "./fonts.scss";
+
+//basic vars colores basicos
+$foreground-color: #000000;
+$background-color: #303f9f;
+
+$background-color-scroll: #d0d0d0;
+$background-color-scroll-hover: #a0a0a0;
+$background-color-menu: #000000a1;
+$page-border-color: #a0a0a0;
+
+$text-color-bold: #010944;
+$text-color-item-menu: #b9bac2;
+$text-color-item-menu-hover: #ffff;
+$text-color-item-menu-active: rgb(150, 167, 224);
+
+$input-outline-color: #141b4b;
+
+$primary-color: #ffffff;
+$secondary-color: #303f9f;
+$third-color: #ffff;
+
+
+$animate-image-first-color: #303f9f;
+$animate-image-second-color: #ffff;
+$animate-image-third-color: #202c79;
+$animate-image-border-color: #ffffff;
+
+$font-family-primary: 'Muller', sans-serif;
+
+$size-1: 1rem;
+$size-2 : 2rem;
+$size-4: 4rem;
+$size-8: 8rem;
+$size-9: 9rem;
+$size-12: 12rem;
+$size-16: 16rem;
+$size-18: 18rem;
+$size-20: 20rem;
+$size-22: 22rem;
+$size-24: 24rem;
+$size-28: 28rem;
+$size-32: 32rem;
+$size-36: 36rem;
+$size-40: 40rem;
+$size-64: 64rem;
+$size-80: 80rem;
+$size-300: 300rem;
+$size-500: 500rem;
+
+
+$big-number: 1000;
+
+$breakpoint-laptop: 800px;

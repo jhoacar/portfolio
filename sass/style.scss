@@ -1,89 +1,221 @@
-/*=======================================================
-	
-	Item	: 	N5 - Minimal Resume/CV & vCard Template
-	
-	Author	: 	Noman Ali Samejo
-	
---------------------------------------------------------------------------------------
-	List Of Contents
---------------------------------------------------------------------------------------
-	
-	01. General Styles
-	
-	02. Menu
-	
-	03. Section Styles
-	
-	04. Main Section
-	
-	05. About Section
-	
-	06. Resume Section
-	
-	07. Portfolio Section
-	
-	08. Contact Section
-	
-	09. Responsive CSS
-
-=========================================================*/
+@import "./variables.scss";
 
 /*=======================================================
 	General Styles
 =======================================================*/
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700,300,100|Lora:400,400italic,700,700italic);
-body,
 html {
-	height: 100%;
-	width: 100%;
-}
-html{
-	font-size:6.25%;
-}
-body {
-	position: relative;
-	overflow: hidden;
-	font-family: Lora, serif;
-	background: #f0f0f0 !important;
-	font-size: 16px;
+  font-size: 6.25%;
+  height: 100%;
+  &,
+  body {
+    overflow: hidden;
+  }
+  body {
+    position: relative;
+    font-family: $font-family-primary;
+    font-size: 16rem;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 }
 * {
-	font-family: inherit;
-}
-.view-project,
-.portfolio-filters > li > a,
-.p-table > .header > .price,
-.info-list > li > strong,
-.btn-custom,
-.menu-items > li > a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Roboto Mono", sans-serif;
-}
-.color {
-	color: #303f9f;
-}
-::-webkit-scrollbar {
-	background: #f0f0f0;
-	height: 10rem;
-	width: 10rem;
-}
-::-webkit-scrollbar-thumb {
-	background: #d0d0d0;
-	border: solid 2rem #f0f0f0;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #a0a0a0;
+  font-family: inherit;
+  color: $foreground-color;
+  box-sizing: border-box;
 }
 img {
-	max-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
 }
-a:hover,a:visited, a:link, a:visited{
-	text-decoration: none;
-	border:none;
-	outline: none;
+a:hover,
+a:visited,
+a:link,
+a:visited {
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+textarea {
+  resize: none;
+}
+
+/*=======================================================
+	Border Styles
+=======================================================*/
+.page-border {
+  .border-top,
+  .border-bottom,
+  .border-right,
+  .border-left {
+    position: absolute;
+    z-index: $big-number;
+    border: solid $size-1 $page-border-color;
+  }
+  .border-top {
+    top: $size-16;
+    left: $size-24;
+    right: $size-24;
+    height: $size-9;
+  }
+  .border-bottom {
+    bottom: $size-16;
+    left: $size-24;
+    right: $size-24;
+    height: $size-9;
+  }
+  .border-right {
+    top: $size-24;
+    bottom: $size-24;
+    right: $size-16;
+    width: $size-9;
+  }
+  .border-left {
+    top: $size-24;
+    bottom: $size-24;
+    left: $size-16;
+    width: $size-9;
+  }
+}
+
+/*=======================================================
+	Main Content Styles
+=======================================================*/
+.main-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background-color;
+  overflow: hidden;
+  padding: $size-32;
+  display: flex;
+  flex-direction: column;
+}
+
+/*=======================================================
+	Menu Styles
+=======================================================*/
+
+#menu-toggle {
+  display: none;
+  transition: background-color 1s;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 0;
+  display: block;
+  position: absolute;
+  top: $size-24;
+  right: $size-24;
+  padding: $size-24;
+  z-index: $big-number;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  * {
+    width: $size-40;
+    height: $size-4;
+    background-color: $primary-color;
+    margin: $size-4 0;
+  }
+}
+
+.menu-items {
+  position: absolute;
+  z-index: $big-number - 10;
+  background: $background-color-menu;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+
+  &.hide-menu {
+    width: 0;
+  }
+
+  -webkit-transition: width 0.6s ease;
+  -moz-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    width: $size-300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $size-40;
+    li > * {
+      text-transform: uppercase;
+      color: $text-color-item-menu;
+      font-size: $size-24;
+      &:hover {
+        color: $text-color-item-menu-hover;
+      }
+      &:active {
+        color: $text-color-item-menu-active;
+      }
+      &:active ~ .menu-items {
+        width: 0;
+      }
+    }
+  }
+}
+
+//.menu-items:hover,
+//.menu-icon:hover + .menu-items,
+#menu-toggle:checked ~ .menu-items,
+.show-menu {
+  width: $size-300;
+}
+
+/*=======================================================
+	Sections Styles
+=======================================================*/
+.sections {
+  position: relative;
+  height: 100%;
+  top:0;
+  left: 0;
+  & > * {
+    opacity: 0;
+    transition: opacity .5s ease;
+    z-index: 0;
+  }
+  .section-active{
+    opacity: 1;
+    z-index: $big-number - 100;
+  }
+  .section{
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    padding: $size-8;
+    @media (min-width: $breakpoint-laptop) {
+      & {
+        padding: $size-64;
+      }
+    }
+  }
+}
+
+/*=======================================================
+	All Sections Styles
+=======================================================*/
+
+@import "./main.scss";
+@import "./contact.scss";

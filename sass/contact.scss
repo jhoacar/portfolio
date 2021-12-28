@@ -1,0 +1,79 @@
+@import "./variables.scss";
+
+/*=======================================================
+	Contact Section Styles
+=======================================================*/
+
+.section-contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+.section-contact-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //padding: $size-8 0;
+  h2 {
+    font-size: $size-32;
+    text-transform: uppercase;
+    letter-spacing: $size-4;
+    color: $foreground-color;
+    & > * {
+      color: $primary-color;
+    }
+  }
+}
+
+.section-contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    & > * {
+      width: 100%;
+      padding: $size-8;
+      & > * {
+        width: 100%;
+        padding: $size-16 $size-8;
+
+      }
+    }
+    input:focus,
+    input:active,
+    textarea:focus,
+    textarea:active {
+      outline: $size-1 solid $input-outline-color;
+    }
+  }
+}
+
+.section-contact-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  & > a {
+    padding: $size-16 $size-32;
+    border: solid $size-1 $primary-color;
+    text-transform: uppercase;
+    text-align: center;
+    color: $primary-color;
+  }
+}
+
+/*=======================================================
+	Responsives Queries
+=======================================================*/
+
+@media (min-width: $breakpoint-laptop) {
+}

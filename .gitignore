@@ -3,3 +3,14 @@
 
 # production
 /build
+
+#old project
+/old
+
+*.css.map
+/*/variables.css
+/*/fonts.css
+/*/main.css
+/*/about.css
+/*/resume.css
+/*/contact.css

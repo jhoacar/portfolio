@@ -1,87 +1,599 @@
-/*=======================================================
-	
-	Item	: 	N5 - Minimal Resume/CV & vCard Template
-	
-	Author	: 	Noman Ali Samejo
-	
---------------------------------------------------------------------------------------
-	List Of Contents
---------------------------------------------------------------------------------------
-	
-	01. General Styles
-	
-	02. Menu
-	
-	03. Section Styles
-	
-	04. Main Section
-	
-	05. About Section
-	
-	06. Resume Section
-	
-	07. Portfolio Section
-	
-	08. Contact Section
-	
-	09. Responsive CSS
+/* Muller each font-face weight declarations*/
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Regular/MullerRegular.woff") format("woff"), url("/fonts/Muller-Regular/MullerRegular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
 
-=========================================================*/
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Bold/MullerBold.woff") format("woff"), url("/fonts/Muller-Bold/MullerBold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 /*=======================================================
 	General Styles
 =======================================================*/
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700,300,100|Lora:400,400italic,700,700italic);
-body,
 html {
+  font-size: 6.25%;
   height: 100%;
-  width: 100%; }
+}
 
-html {
-  font-size: 6.25%; }
-
-body {
-  position: relative;
+html,
+html body {
   overflow: hidden;
-  font-family: Lora, serif;
-  background: #f0f0f0 !important;
-  font-size: 16px; }
+}
+
+html body {
+  position: relative;
+  font-family: "Muller", sans-serif;
+  font-size: 16rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 * {
-  font-family: inherit; }
-
-.view-project,
-.portfolio-filters > li > a,
-.p-table > .header > .price,
-.info-list > li > strong,
-.btn-custom,
-.menu-items > li > a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto Mono", sans-serif; }
-
-.color {
-  color: #303f9f; }
-
-::-webkit-scrollbar {
-  background: #f0f0f0;
-  height: 10rem;
-  width: 10rem; }
-
-::-webkit-scrollbar-thumb {
-  background: #d0d0d0;
-  border: solid 2rem #f0f0f0; }
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a0a0a0; }
+  font-family: inherit;
+  color: #000000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
-a:hover, a:visited, a:link, a:visited {
+a:hover,
+a:visited,
+a:link,
+a:visited {
   text-decoration: none;
   border: none;
-  outline: none; }
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/*=======================================================
+	Border Styles
+=======================================================*/
+.page-border .border-top,
+.page-border .border-bottom,
+.page-border .border-right,
+.page-border .border-left {
+  position: absolute;
+  z-index: 1000;
+  border: solid 1rem #a0a0a0;
+}
+
+.page-border .border-top {
+  top: 16rem;
+  left: 24rem;
+  right: 24rem;
+  height: 9rem;
+}
+
+.page-border .border-bottom {
+  bottom: 16rem;
+  left: 24rem;
+  right: 24rem;
+  height: 9rem;
+}
+
+.page-border .border-right {
+  top: 24rem;
+  bottom: 24rem;
+  right: 16rem;
+  width: 9rem;
+}
+
+.page-border .border-left {
+  top: 24rem;
+  bottom: 24rem;
+  left: 16rem;
+  width: 9rem;
+}
+
+/*=======================================================
+	Main Content Styles
+=======================================================*/
+.main-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #303f9f;
+  overflow: hidden;
+  padding: 32rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*=======================================================
+	Menu Styles
+=======================================================*/
+#menu-toggle {
+  display: none;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 0;
+  display: block;
+  position: absolute;
+  top: 24rem;
+  right: 24rem;
+  padding: 24rem;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu-icon * {
+  width: 40rem;
+  height: 4rem;
+  background-color: #ffffff;
+  margin: 4rem 0;
+}
+
+.menu-items {
+  position: absolute;
+  z-index: 990;
+  background: #000000a1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-items.hide-menu {
+  width: 0;
+}
+
+.menu-items ul {
+  width: 300rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40rem;
+}
+
+.menu-items ul li > * {
+  text-transform: uppercase;
+  color: #b9bac2;
+  font-size: 24rem;
+}
+
+.menu-items ul li > *:hover {
+  color: #ffff;
+}
+
+.menu-items ul li > *:active {
+  color: #96a7e0;
+}
+
+.menu-items ul li > *:active ~ .menu-items {
+  width: 0;
+}
+
+#menu-toggle:checked ~ .menu-items,
+.show-menu {
+  width: 300rem;
+}
+
+/*=======================================================
+	Sections Styles
+=======================================================*/
+.sections {
+  position: relative;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.sections > * {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  z-index: 0;
+}
+
+.sections .section-active {
+  opacity: 1;
+  z-index: 900;
+}
+
+.sections .section {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 8rem;
+}
+
+@media (min-width: 800px) {
+  .sections .section {
+    padding: 64rem;
+  }
+}
+
+/*=======================================================
+	All Sections Styles
+=======================================================*/
+/* Muller each font-face weight declarations*/
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Regular/MullerRegular.woff") format("woff"), url("/fonts/Muller-Regular/MullerRegular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Bold/MullerBold.woff") format("woff"), url("/fonts/Muller-Bold/MullerBold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/*=======================================================
+	Main Section Styles
+=======================================================*/
+.section-main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.section-main-container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16rem;
+}
+
+.section-main-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-main-text > * {
+  text-align: center;
+  color: #ffffff;
+  margin: 16rem 0;
+}
+
+.section-main-text h1 {
+  font-size: 40rem;
+}
+
+.section-main-text p {
+  font-size: 20rem;
+  font-style: italic;
+  line-height: 28rem;
+}
+
+.section-main-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40rem;
+}
+
+.section-main-buttons > a {
+  padding: 16rem 32rem;
+  border: solid 1rem #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+/*=======================================================
+	Animation Image
+=======================================================*/
+.animated-shape {
+  background: linear-gradient(45deg, #303f9f 0%, #ffff 100%);
+  -webkit-animation: borders 8s ease-in-out infinite;
+          animation: borders 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  border: solid 2rem #ffffff;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  width: Min(50%, 500rem);
+  height: unset;
+  aspect-ratio: 1 / 1.3;
+  padding: 8rem;
+  margin: 4rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@-webkit-keyframes borders {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, #303f9f 0%, #ffff 100%);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    background: linear-gradient(45deg, #202c79 0%, #ffff 100%);
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, #303f9f 0%, #ffff 100%);
+  }
+}
+
+@keyframes borders {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, #303f9f 0%, #ffff 100%);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    background: linear-gradient(45deg, #202c79 0%, #ffff 100%);
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, #303f9f 0%, #ffff 100%);
+  }
+}
+
+/*=======================================================
+	Responsives Queries
+=======================================================*/
+@media (min-width: 800px) {
+  .section-main-container, .section-main-buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .section-main-text h1 {
+    font-size: 80rem;
+  }
+  .section-main-text p {
+    text-align: justify;
+    margin: 64rem 0;
+    padding: 40rem;
+    font-size: 28rem;
+    line-height: 40rem;
+  }
+}
+
+/* Muller each font-face weight declarations*/
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Regular/MullerRegular.woff") format("woff"), url("/fonts/Muller-Regular/MullerRegular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url("/fonts/Muller-Bold/MullerBold.woff") format("woff"), url("/fonts/Muller-Bold/MullerBold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/*=======================================================
+	Contact Section Styles
+=======================================================*/
+.section-contact {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-contact-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-contact-header h2 {
+  font-size: 32rem;
+  text-transform: uppercase;
+  letter-spacing: 4rem;
+  color: #000000;
+}
+
+.section-contact-header h2 > * {
+  color: #ffffff;
+}
+
+.section-contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-contact-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.section-contact-form form > * {
+  width: 100%;
+  padding: 8rem;
+}
+
+.section-contact-form form > * > * {
+  width: 100%;
+  padding: 16rem 8rem;
+}
+
+.section-contact-form form input:focus,
+.section-contact-form form input:active,
+.section-contact-form form textarea:focus,
+.section-contact-form form textarea:active {
+  outline: 1rem solid #141b4b;
+}
+
+.section-contact-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-contact-info-container > a {
+  padding: 16rem 32rem;
+  border: solid 1rem #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+/*=======================================================
+	Responsives Queries
+=======================================================*/
+/*# sourceMappingURL=style.css.map */
