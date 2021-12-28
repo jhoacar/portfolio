@@ -40,7 +40,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "docker-compose.yaml"
-          target: "docker-compose.yaml"
+          target: "~"
       - 
         name: Executing docker-compose up -d in server!
         uses: appleboy/ssh-action@master
