@@ -1,3 +1,2 @@
 FROM php:8.0-apache
-EXPOSE 80
-COPY . /var/www/html
+COPY . /var/www/html/
