@@ -7,9 +7,9 @@
     <div class="section-main-container">
 
         <div class="section-main-text">
-            <h1>{{ main-name }}</h1>
+            <h1><?php echo $GLOBALS["data"]["main-name"] ?></h1>
             <p>
-                {{ main-description }}
+                <?php echo $GLOBALS["data"]["main-description"] ?>
             </p>
         </div>
 
@@ -19,9 +19,9 @@
 
     <div class='section-main-buttons'>
 
-        <a href='#about' onclick="showSection(this)"> {{ button-about }} </a>
+        <a id='about' onclick="showSection(this)"> <?php echo $GLOBALS["data"]["button-about"] ?> </a>
 
-        <a href='#contact' onclick="showSection(this)"> {{ button-contact }} </a>
+        <a id='contact' onclick="showSection(this)"> <?php echo $GLOBALS["data"]["button-contact"] ?> </a>
 
     </div>
 

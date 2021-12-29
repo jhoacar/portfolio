@@ -1,3 +1,3 @@
-FROM nginx:1.19-alpine
+FROM luzifer/alpine-nginx-php
 EXPOSE 80
-ADD index.html /usr/share/nginx/html
+COPY . /var/www

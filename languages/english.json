@@ -1,0 +1,49 @@
+{
+    "cv-path": "resources/CV-English.pdf",
+    "title": "Jhoan Carrero - Technology Entrepreneur",
+    "init": "Home",
+    "about": "About me",
+    "resume": "Resume",
+    "contact": "Contact",
+    "main-name": "I'm Jhoan",
+    "main-profession": "I'm a <span>Developer</span>",
+    "main-description": "Computer Professional, lover of technology and music with knowledge about networks, physics and mathematics",
+    "button-about": "Discover more",
+    "button-contact": "Contact me",
+    "button-download": "Download Resume",
+    "button-form": "Send Message",
+    "name": "Name",
+    "profile-name": "Jhoan Carrero",
+    "job": "Job",
+    "profile-job": "Independiente",
+    "age": "Age",
+    "form-contact": "Contactame",
+    "form-name": "Name",
+    "form-email": "Email",
+    "form-subject": "Subject",
+    "form-message": "Message",
+    "profile-age": "23 years",
+    "residence": "Residence",
+    "profile-residence": "Argentina",
+    "city": "City",
+    "profile-city": "Buenos Aires",
+    "about-text": "In love with technology, I decided to learn about computers and everything related to networks; I am fascinated by how incredible things can be done when you get to it, where creativity, imagination and logic are perfectly combined, because this is a world to be in continuous learning and of course, in this world is where I want to be.",
+    "skill-text": "My <span> Skills </span>",
+    "skills": [
+        "HTML/CSS",
+        "Javascript",
+        "ReactJS",
+        "NodeJS",
+        "Python",
+        "PHP"
+    ],
+    "education-text": "My <span>Education</span>",
+    "education": [
+        {
+            "name": "Universidad de Buenos Aires (UBA)",
+            "career": "Ingenieria Informatica",
+            "time": "2018-Actualmente"
+        },
+        {}
+    ]
+}
