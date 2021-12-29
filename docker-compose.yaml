@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs:ro
+      - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
+      - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+
+  nginx-proxy-acme:
+    image: nginxproxy/acme-companion
+    restart: always
+    environment:
+      - DEFAULT_EMAIL=carrerojhoan@gmail.com
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs:rw
+      - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
+      - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
+      - /home/jhoan/portfolio/proxy/acme:/etc/acme.sh
+
+  portfolio:
+    image: jhoacar/portfolio
+    restart: always
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=google.jhoacar.me
+      - LETSENCRYPT_HOST=google.jhoacar.me
+      - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
+    depends_on:
+      - nginx-proxy
+      - nginx-proxy-acme
+
