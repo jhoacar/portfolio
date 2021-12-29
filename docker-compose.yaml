@@ -31,9 +31,9 @@ services:
     image: jhoacar/portfolio
     restart: always
     expose:
-      - "8080"
+      - "80"
     environment:
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_PORT=80
       - VIRTUAL_HOST=google.jhoacar.me
       - LETSENCRYPT_HOST=google.jhoacar.me
       - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
