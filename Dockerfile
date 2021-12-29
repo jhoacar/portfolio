@@ -1,3 +1,3 @@
-FROM luzifer/alpine-nginx-php
-EXPOSE 80
-COPY . /var/www
+FROM trafex/php-nginx
+EXPOSE 8080
+COPY . /var/www/html
