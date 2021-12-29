@@ -28,14 +28,30 @@ services:
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
       - /home/jhoan/portfolio/proxy/acme:/etc/acme.sh
 
+  # portfolio:
+  #   image: jhoacar/portfolio
+  #   restart: always
+  #   expose:
+  #     - "8080"
+  #   environment:
+  #     - VIRTUAL_PORT=8080
+  #     - VIRTUAL_HOST=google.jhoacar.me
+  #     - LETSENCRYPT_HOST=google.jhoacar.me
+  #     - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
+  #   volumes:
+  #     - /home/jhoan/portfolio/web/etc-nginx-conf:/etc/nginx/conf.d
+  #     - /home/jhoan/portfolio/web/etc-php-conf:/etc/php8/conf.d
+  #   depends_on:
+  #     - nginx-proxy
+  #     - nginx-proxy-acme
 
-  portfolio:
-    image: jhoacar/portfolio
+  prueba:
+    image: nginx:stable-alpine
     restart: always
     expose:
-      - "8080"
+      - "80"
     environment:
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_PORT=80
       - VIRTUAL_HOST=google.jhoacar.me
       - LETSENCRYPT_HOST=google.jhoacar.me
       - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
