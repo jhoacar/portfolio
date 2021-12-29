@@ -4,4 +4,3 @@
 **/docker-compose.yaml
 **/Dockerfile
 **/.gitignore
-**/apache.conf
