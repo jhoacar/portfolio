@@ -59,4 +59,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-              docker-compose up -d
+              sudo docker-compose up -d
