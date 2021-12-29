@@ -1,3 +1,3 @@
-FROM trafex/php-nginx
-EXPOSE 8080
+FROM php:8.0-apache
+EXPOSE 80
 COPY . /var/www/html

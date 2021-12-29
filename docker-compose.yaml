@@ -12,7 +12,6 @@ services:
       - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs
       - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
-      - /home/jhoan/portfolio/proxy/proxy-conf.d:/etc/nginx/conf.d
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
 
@@ -28,36 +27,16 @@ services:
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
       - /home/jhoan/portfolio/proxy/acme:/etc/acme.sh
 
-  # portfolio:
-  #   image: jhoacar/portfolio
-  #   restart: always
-  #   expose:
-  #     - "8080"
-  #   environment:
-  #     - VIRTUAL_PORT=8080
-  #     - VIRTUAL_HOST=google.jhoacar.me
-  #     - LETSENCRYPT_HOST=google.jhoacar.me
-  #     - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
-  #   volumes:
-  #     - /home/jhoan/portfolio/web/etc-nginx-conf:/etc/nginx/conf.d
-  #     - /home/jhoan/portfolio/web/etc-php-conf:/etc/php8/conf.d
-  #   depends_on:
-  #     - nginx-proxy
-  #     - nginx-proxy-acme
-
-  prueba:
-    image: nginx:stable-alpine
+  portfolio:
+    image: jhoacar/portfolio
     restart: always
     expose:
       - "80"
     environment:
       - VIRTUAL_PORT=80
-      - VIRTUAL_HOST=google.jhoacar.me
-      - LETSENCRYPT_HOST=google.jhoacar.me
+      - VIRTUAL_HOST=prueba.jhoacar.me
+      - LETSENCRYPT_HOST=prueba.jhoacar.me
       - LETSENCRYPT_EMAIL=carrerojhoan@gmail.com
-    volumes:
-      - /home/jhoan/portfolio/web/etc-nginx-conf:/etc/nginx/conf.d
-      - /home/jhoan/portfolio/web/etc-php-conf:/etc/php8/conf.d
     depends_on:
       - nginx-proxy
       - nginx-proxy-acme
