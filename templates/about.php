@@ -8,35 +8,35 @@
 
         <div class='section-header'>
             <h2>
-                {{ profile-profession }}
+                <?php echo $GLOBALS["data"]["main-profession"] ?>
             </h2>
         </div>
 
         <ul class='info-list'>
 
             <li>
-                <strong>{{ name }} :</strong>
-                <span>{{ profile-name }}</span>
+                <strong><?php echo $GLOBALS["data"]["name"] ?> :</strong>
+                <span><?php echo $GLOBALS["data"]["profile-name"] ?></span>
             </li>
 
             <li>
-                <strong>{{ job }} :</strong>
-                <span>{{ profile-job }}</span>
+                <strong><?php echo $GLOBALS["data"]["job"] ?> :</strong>
+                <span><?php echo $GLOBALS["data"]["profile-job"] ?></span>
             </li>
 
             <li>
-                <strong>{{ age }} :</strong>
-                <span>{{ profile-age }}</span>
+                <strong><?php echo $GLOBALS["data"]["age"] ?> :</strong>
+                <span><?php echo $GLOBALS["data"]["profile-age"] ?></span>
             </li>
 
             <li>
-                <strong>{{ residence }} :</strong>
-                <span>{{ profile-residence }}</span>
+                <strong><?php echo $GLOBALS["data"]["residence"] ?> :</strong>
+                <span><?php echo $GLOBALS["data"]["profile-residence"] ?></span>
             </li>
 
             <li>
-                <strong>{{ city }} :</strong>
-                <span>{{ profile-city }}</span>
+                <strong><?php echo $GLOBALS["data"]["city"] ?> :</strong>
+                <span><?php echo $GLOBALS["data"]["profile-city"] ?></span>
             </li>
 
 
@@ -50,19 +50,19 @@
             <div class="about-text">
 
                 <p>
-                    {{ about-text}}
+                    <?php echo $GLOBALS["data"]["about-text"] ?>
                 </p>
 
             </div>
 
             <div class='about-buttons'>
 
-                <a href='{{ cv-path }}' download>
-                    {{ button-download }}
+                <a href='<?php echo $GLOBALS["data"]["cv-path"] ?>' download>
+                    <?php echo $GLOBALS["data"]["button-download"] ?>
                 </a>
 
-                <a href='#contact' >
-                    {{ button-contact }}
+                <a id='contact' >
+                    <?php echo $GLOBALS["data"]["button-contact"] ?>
                 </a>
 
             </div>
@@ -75,18 +75,20 @@
     <div class='section-about-block skills-block'>
 
         <div class='section-header'>
-            <h2> {{ habilities-text }} </h2>
+            <h2> <?php echo $GLOBALS["data"]["skill-text"] ?> </h2>
         </div>
 
         <div class='skills'>
 
-            {{ for string in skills }}
+            <?php 
+                $skills = $GLOBALS["data"]["skills"];
 
-            <div class='skill'>
-                <h4> {{ string }} </h4>
-            </div>
-
-            {{ end for }}
+                foreach($skills as $skill)
+                    echo "
+                    <div class='skill'>
+                        <h4>$skill</h4>
+                     </div>";
+            ?>
 
         </div>
     </div>

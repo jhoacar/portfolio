@@ -40,10 +40,53 @@
     "education-text": "Mi <span>Educación</span>",
     "education": [
         {
-            "name": "Universidad de Buenos Aires (UBA)",
+            "name": "Universidad de Buenos Aires (UBA) - Argentina",
             "career": "Ingenieria Informatica",
             "time": "2018-Actualmente"
         },
-        {}
+        {
+            "name": "Universidad Nacional Experimental del Tachira (UNET) - Venezuela",
+            "career": "Ingenieria Informatica",
+            "time": "2015-2018"
+        }
+    ],
+    "experience-text":" Mi <span>experiencia</span>",
+    "experience": [
+        {
+            "name":"Gestor de Cabaña",
+            "position":"Proyecto",
+            "date":"05/2016 - 11/2016",
+            "description":"Proyecto programmed in C ++ with the use of the object-oriented programming paradigm, in charge of managing the inventory of a sportswear store (First Proyecto)."
+        },
+        {
+            "name":"Blest Salon",
+            "position":"Proyecto",
+            "date":"08/2018 - 09/2018",
+            "description":"Proyecto programado en Python con el uso de consultas a una base de datos, MySQL encargado de la distribución de meseros a sus mesas en un restaurante."
+        },
+        {
+            "name":"<a href='https://compiled-menu-view.herokuapp.com/'>View Menu</a>",
+            "position":"Proyecto",
+            "date":"11/2021 - Actualmente",
+            "description":"Proyecto para vista de carta de presentacion programado en ReactJS con uso de ReduxJS y Services Workers "
+        },
+        {
+            "name":"<a href='https://compiled-menu-edit.herokuapp.com/'>Edit Menu</a>",
+            "position":"Proyecto",
+            "date":"11/2021 - Actualmente",
+            "description":"Proyecto para edicion de carta de presentacion programado en ReactJS con uso de ReduxJS y Services Workers "
+        },
+        {
+            "name":"<a href='https://www.captivefire.net'>CaptiveFire</a>",
+            "position":"Proyecto",
+            "date":"11/2021 - Actualmente",
+            "description":"Proyecto basado en firewall de red (OpenWrt) para redirigir todo trafico web hacia un portal cautivo, usando el modelo vista controlador, con las tecnologias ReactJS del lado del frontend, PHP del lado del backend y un servidor Nginx <a href='https://www.captivefire.net'>www.captivefire.net</a>"
+        },
+        {
+            "name":"Consultora Blockchain",
+            "position":"FullStack Developer",
+            "date":"11/2021 - Actualmente",
+            "description":"Me desempeño en tareas Frontend y Backend, en Frontend liderando un equipo de desarrollo con el framework NextJS, configurando una comunicacion directa con UX mediante Storybook e implementacion de Redux Sagas para comunicación con un Backend de Loopback 4 con bases de datos MongoDB y MySQL, tambien solucionando inconvenientes en proyectos anteriores por migraciones de Google Cloud hacia AWS"
+        }
     ]
 }

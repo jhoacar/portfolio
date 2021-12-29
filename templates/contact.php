@@ -4,7 +4,7 @@
 <section class='section section-contact'>
 
     <div class='section-contact-header'>
-        <h2>{{ contact }}</h2>
+        <h2><?php echo $GLOBALS["data"]["contact"] ?></h2>
     </div>
 
     <div class='section-contact-form'>
@@ -12,19 +12,19 @@
         <form id='contact-form' method='post' action='mail.php'>
 
             <div class="contact-form-name">
-                <input type='text' placeholder='{{ form-name }}' name='name' required>
+                <input type='text' placeholder='<?php echo $GLOBALS["data"]["form-name"] ?>' name='name' required>
             </div>
             <div class="contact-form-email">
-                <input type='email' placeholder='{{ form-email }}' name='email' required>
+                <input type='email' placeholder='<?php echo $GLOBALS["data"]["form-email"] ?>' name='email' required>
             </div>
             <div class="contact-form-subject">
-                <input type='text' placeholder='{{ form-subject }}' name='subject' required>
+                <input type='text' placeholder='<?php echo $GLOBALS["data"]["form-subject"] ?>' name='subject' required>
             </div>
             <div class="contact-form-message">
-                <textarea placeholder='{{ form-message }}' name='message' rows='5' required></textarea>
+                <textarea placeholder='<?php echo $GLOBALS["data"]["form-message"] ?>' name='message' rows='5' required></textarea>
             </div>
             <div class="contact-form-submit">
-                <button type='submit'> {{ button-form }} </button>
+                <button type='submit'> <?php echo $GLOBALS["data"]["button-form"] ?> </button>
             </div>
         </form>
 

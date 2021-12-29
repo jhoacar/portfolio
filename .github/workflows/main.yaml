@@ -48,7 +48,7 @@ jobs:
           source: "docker-compose.yaml"
           target: "~"
       - 
-        name: Executing docker-compose up -d in server!
+        name: Executing " docker-compose up -d " in server!
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}

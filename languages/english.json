@@ -40,10 +40,53 @@
     "education-text": "My <span>Education</span>",
     "education": [
         {
-            "name": "Universidad de Buenos Aires (UBA)",
-            "career": "Ingenieria Informatica",
-            "time": "2018-Actualmente"
+            "name": "Buenos Aires University",
+            "career": "Informatics Engineering",
+            "time": "2018-Actually"
         },
-        {}
+        {
+            "name": "Tachira's University",
+            "career": "Informatics Engineering",
+            "time": "2015-2018"
+        }
+    ],
+    "experience-text":" My <span>experience</span>",
+    "experience": [
+        {
+            "name":"Cabaña's Gestor",
+            "position":"Project",
+            "date":"05/2016 - 11/2016",
+            "description":"Project programmed in C ++ with the use of the object-oriented programming paradigm, in charge of managing the inventory of a sportswear store (First Project)."
+        },
+        {
+            "name":"Blest Salon",
+            "position":"Project",
+            "date":"08/2018 - 09/2018",
+            "description":"Project programmed in Python with the use of queries to a database, MySQL in charge of distributing waiters to their tables in a restaurant (currently designing its Web version, with Javascript frameworks, specifically ReactJS). "
+        },
+        {
+            "name":"<a href='https://compiled-menu-view.herokuapp.com/'>View Menu</a>",
+            "position":"Project",
+            "date":"11/2021 - Actually",
+            "description":"Project of letter presentation programmed in ReactJS with use of ReduxJS and Services Workers "
+        },
+        {
+            "name":"<a href='https://compiled-menu-edit.herokuapp.com/'>Edit Menu</a>",
+            "position":"Project",
+            "date":"11/2021 - Actually",
+            "description":"Project for edit letter presentation programmed in ReactJS with use of ReduxJS and Services Workers "
+        },
+        {
+            "name":"<a href='https://www.captivefire.net'>CaptiveFire</a>",
+            "position":"Project",
+            "date":"11/2021 - Actually",
+            "description":"Project based on a network firewall (OpenWrt) to redirect all web traffic to a captive portal, using the controller view model, with ReactJS technologies on the frontend side, PHP on the backend side and an Nginx server <a href='https://www.captivefire.net'>www.captivefire.net</a>"
+        },
+        {
+            "name":"Consultora Blockchain",
+            "position":"FullStack Developer",
+            "date":"11/2021 - Actually",
+            "description":"I work in Frontend and Backend tasks, in Frontend leading a development team with the NextJS framework, configuring a direct communication with UX through Storybook and implementing Redux Sagas for communication with a Loopback 4 Backend with MongoDB and MySQL databases, as well solving problems in previous projects due to migrations from Google Cloud to AWS."
+        }
     ]
 }
