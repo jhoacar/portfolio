@@ -23,8 +23,8 @@ using docker-compose.
 </p>
 <p>
 First I configured DockerHub for use connection with Github Action,
-next my cloud service, enabling ssh connections and using private keys
-in this project with other action.
+next I configured my cloud service, enabling ssh connections and using private keys
+in this project with other action for make docker-compose with override tag in the host.
 </p>
 <p>
 The deploy uses a nginx proxy enabling only HTTP and HTTPS requests in company with other server for letsencrypt.
