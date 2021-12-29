@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <img src="img/profile.png" class="animated-shape section-main-text">
+        <img src="/img/profile.png" class="animated-shape section-main-text">
 
     </div>
 

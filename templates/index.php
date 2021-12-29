@@ -10,9 +10,9 @@
 
   <title><?php echo $GLOBALS["data"]["title"] ?></title>
 
-  <link rel='stylesheet' type='text/css' href='css/style.css'>
-  <link rel='stylesheet' type='text/css' href='css/main.css'>
-  <link rel='stylesheet' type='text/css' href='css/contact.css'>
+  <link rel='stylesheet' type='text/css' href='/css/style.css'>
+  <link rel='stylesheet' type='text/css' href='/css/main.css'>
+  <link rel='stylesheet' type='text/css' href='/css/contact.css'>
 
 </head>
 

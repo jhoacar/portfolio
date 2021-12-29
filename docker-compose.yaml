@@ -39,4 +39,3 @@ services:
     depends_on:
       - nginx-proxy
       - nginx-proxy-acme
-
