@@ -37,7 +37,7 @@ jobs:
       -  
         name: Checkout Files of Github
         uses: actions/checkout@v2
-        run: |
+      - run: |
           echo -e "version: '3'\nservices:\n  portfolio:\n    image: jhoacar/portfolio:${{ github.sha }}" > docker-compose.override.yaml
           git config user.name jhoacar
           git config user.email carrerojhoan@gmail.com
