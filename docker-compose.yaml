@@ -9,7 +9,7 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs:ro
+      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs
       - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
       - /home/jhoan/portfolio/proxy/proxy-conf.d:/etc/nginx/conf.d
@@ -23,7 +23,7 @@ services:
       - DEFAULT_EMAIL=carrerojhoan@gmail.com
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs:rw
+      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs
       - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
       - /home/jhoan/portfolio/proxy/acme:/etc/acme.sh
