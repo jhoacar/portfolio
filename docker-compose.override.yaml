@@ -1,0 +1,4 @@
+version: '3'
+services:
+  portfolio:
+    image: jhoacar/portfolio:7eba8074f6e9311f5867680c1e26529542ca6db8
