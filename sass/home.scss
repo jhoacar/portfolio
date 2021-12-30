@@ -1,17 +1,17 @@
 @import "./variables.scss";
 
 /*=======================================================
-	Main Section Styles
+	Home Section Styles
 =======================================================*/
 
-.section-main {
+.section-home {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.section-main-container {
+.section-home-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
   gap: $size-16;
 }
 
-.section-main-text {
+.section-home-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +40,7 @@
   }
 }
 
-.section-main-buttons {
+.section-home-buttons {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -112,10 +112,10 @@
 =======================================================*/
 
 @media (min-width: $breakpoint-laptop) {
-    .section-main-container,.section-main-buttons{
+    .section-home-container,.section-home-buttons{
         flex-direction: row;
     }
-    .section-main-text {
+    .section-home-text {
         h1{
             font-size: $size-80;
         }

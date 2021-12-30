@@ -25,7 +25,7 @@ function main()
     $data = file_get_contents($file_lang);
     if($data){
       $GLOBALS["data"]=json_decode($data,true);
-      include 'templates/index.php';
+      include 'templates/main.php';
     }
 }
 

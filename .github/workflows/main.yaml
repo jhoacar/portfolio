@@ -39,7 +39,6 @@ jobs:
         uses: actions/checkout@v2
       - run: |
           echo -e "version: '3'\nservices:\n  portfolio:\n    image: jhoacar/portfolio:${{ github.sha }}" > docker-compose.override.yaml
-          echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" > security_test
           git config user.name jhoacar
           git config user.email carrerojhoan@gmail.com
           git add .

@@ -296,9 +296,9 @@ textarea {
 }
 
 /*=======================================================
-	Main Section Styles
+	Home Section Styles
 =======================================================*/
-.section-main {
+.section-home {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -313,7 +313,7 @@ textarea {
           justify-content: space-evenly;
 }
 
-.section-main-container {
+.section-home-container {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -331,7 +331,7 @@ textarea {
   gap: 16rem;
 }
 
-.section-main-text {
+.section-home-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,23 +347,23 @@ textarea {
           justify-content: center;
 }
 
-.section-main-text > * {
+.section-home-text > * {
   text-align: center;
   color: #ffffff;
   margin: 16rem 0;
 }
 
-.section-main-text h1 {
+.section-home-text h1 {
   font-size: 40rem;
 }
 
-.section-main-text p {
+.section-home-text p {
   font-size: 20rem;
   font-style: italic;
   line-height: 28rem;
 }
 
-.section-main-buttons {
+.section-home-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,7 +381,7 @@ textarea {
   gap: 40rem;
 }
 
-.section-main-buttons > a {
+.section-home-buttons > a {
   padding: 16rem 32rem;
   border: solid 1rem #ffffff;
   text-transform: uppercase;
@@ -444,16 +444,16 @@ textarea {
 	Responsives Queries
 =======================================================*/
 @media (min-width: 800px) {
-  .section-main-container, .section-main-buttons {
+  .section-home-container, .section-home-buttons {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .section-main-text h1 {
+  .section-home-text h1 {
     font-size: 80rem;
   }
-  .section-main-text p {
+  .section-home-text p {
     text-align: justify;
     margin: 64rem 0;
     padding: 40rem;
