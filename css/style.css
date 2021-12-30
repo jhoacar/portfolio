@@ -49,7 +49,7 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-a,
+
 a:hover,
 a:visited,
 a:link,
@@ -494,6 +494,7 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow-y: scroll;
 }
 
 .section-contact-header {
