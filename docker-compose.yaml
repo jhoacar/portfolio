@@ -9,7 +9,11 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+<<<<<<< HEAD
       - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs
+=======
+      - /home/jhoan/portfolio/proxy/certs:/etc/nginx/certs:ro
+>>>>>>> d0014b25f1435d240c670692680c35da65e5198a
       - /home/jhoan/portfolio/proxy/vhostd:/etc/nginx/vhost.d
       - /home/jhoan/portfolio/proxy/html:/usr/share/nginx/html
     labels:
