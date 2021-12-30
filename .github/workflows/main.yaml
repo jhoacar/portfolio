@@ -64,4 +64,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+              IMAGES_ID=$(docker images | grep "jhoacar/portfolio" | awk '{ print $3 }')
+              CONTAINER_RUNNING_ID=$(docker ps | grep "jhoacar/portfolio" | awk '{ print $NF }')
+              docker kill $CONTAINER_RUNNING_ID
+              docker rm $CONTAINER_RUNNING_ID
+              docker rmi $IMAGES_ID
               docker-compose up -d
