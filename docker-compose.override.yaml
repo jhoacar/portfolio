@@ -1,4 +1,4 @@
 version: '3'
 services:
   portfolio:
-    image: jhoacar/portfolio:1e68a38cd113bc1525d2c1adbffa580566dcf0fb
+    image: jhoacar/portfolio:249d79e36d486d942f72194fe1b1539d9d2203f6
