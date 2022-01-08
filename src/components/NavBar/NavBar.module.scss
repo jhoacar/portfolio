@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.navbar-list {
+  position: absolute;
+  z-index: 10000;
+  transform: $transformation-navbar;
+  width: min-content;
+  height: min-content;
+  li {
+    list-style: none;
+  }
+}
+
+.navbar-list-item {
+  background: $background-navbar;
+  color: $foreground-navbar;
+  height: $height-navbar-item;
+  width: $width-navbar-item;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  box-shadow: -$boxshadow-separation $boxshadow-separation 0 $boxshadow-navbar;
+  transition: all 0.25s linear;
+
+  &:hover {
+    background: $hover-background-navbar;
+    color: $hover-foreground-navbar;
+    transform: translate($hover-separation, -$hover-separation);
+    transition: all 0.25s linear;
+    box-shadow: -$boxshadow-item-separation $boxshadow-item-separation 0 $boxshadow-navbar;
+
+    &:before,
+    &:after {
+      transition: all 0.25s linear;
+      width: $depth-navbar-item;
+    }
+
+    &:before {
+      background: $hover-background-navbar-border;
+      top: $top-left-border;
+      left: $left-left-border;
+    }
+
+    &:after {
+      background: $hover-background-navbar-border;
+      bottom: $bottom-front-border;
+      left: $left-front-border;
+      height: $width-navbar-item;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    transition: all 0.25s linear;
+    width: $depth-navbar-item;
+  }
+
+  &:after {
+    height: $width-navbar-item;
+    background: $border-front-item;
+    bottom: $bottom-front-border;
+    left: $left-front-border;
+    transform: rotate(90deg) skew(0, 45deg);
+  }
+
+  &:before {
+    height: $height-navbar-item;
+    background: $border-left-item;
+    top: $top-left-border;
+    left: $left-left-border;
+    transform: skewY(-45deg);
+  }
+}

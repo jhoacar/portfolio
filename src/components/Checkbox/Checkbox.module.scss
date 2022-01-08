@@ -1,0 +1,129 @@
+@import "../../styles/variables.scss";
+
+.checkbox-form {
+  position: relative;
+  //transform: rotate(-35deg) skew(20deg, 5deg);
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  & > label {
+    
+    position: absolute;
+    top:0;
+    left: 0;
+
+    cursor: pointer;
+    display: inline-block;
+    background-image: radial-gradient(
+      circle at 25% 50%,
+      $color1 25%,
+      $color2 25%
+    );
+    background-size: 100%;
+    width: var(--checkbox-label-width);
+    height: $label-height;
+    border-radius: 100em;
+    filter: brightness(0.6);
+    transition: all 0.4s ease-in-out;
+    box-shadow: -.3em .3em 0 #e1e1e1;
+  }
+  input:checked + label {
+    background-position: calc(var(--checkbox-label-width) / 2) 50%;
+    filter: brightness(1);
+  }
+
+  /* character */
+  .head {
+    $head-radius: calc($head-size * 0.5);
+    width: $head-size;
+    height: calc($head-size * 0.9);
+    top: 0;
+    left: 10%;
+    z-index: -1;
+    background-color: $character-color-primary;
+    background: $body-color;
+    position: absolute;
+    border-radius: $head-radius $head-radius 0 0;
+    transition: transform var(--animation-time) ease-in-out;
+    transition-delay: 0s;
+
+    .eyes {
+      $eye-size: calc($head-size / 3);
+      width: $head-size;
+      height: $eye-size;
+      position: absolute;
+      top: 25%;
+      .eye1,
+      .eye2 {
+        width: calc($head-size / 3);
+        height: calc($head-size / 3);
+        background-image: radial-gradient(
+          circle at 50% 50%,
+          rgb(5, 5, 5) 30%,
+          white 30%
+        );
+        position: absolute;
+        border-radius: 50%;
+        animation: blink 1.5s alternate infinite ease-in;
+      }
+      .eye1 {
+        left: 10%;
+      }
+      .eye2 {
+        right: 10%;
+      }
+    }
+  }
+  .arm-container {
+    pointer-events: none;
+    overflow: hidden;
+    height: 100%;
+    width: var(--checkbox-label-width);
+    position: absolute;
+    top: 0;
+    left:0;
+    border-radius: 100000em;
+    box-shadow: -2em 2em 0 #e1e1e1;
+    .arm {
+      $arm-radius: calc($head-size * 0.3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotateZ(-80deg) translateY(100%);
+      border-radius: $arm-radius $arm-radius 0 0;
+      background-color: $character-color-primary;
+      width: calc($head-size / 2);
+      height: $head-size;
+      transition: transform var(--animation-time) ease-in-out;
+      transition-delay: 0s;
+      box-shadow: -1px -1px 8px black;
+    }
+  }
+  /* checkbox event */
+  &.visible {
+    pointer-events: none;
+    & .head {
+      transition-delay: var(--transition-delay1), 0;
+      transform: rotate(20deg) translate(20%, -70%);
+    }
+    & .arm {
+      transition-delay: var(--transition-delay2), 0;
+      transform: rotateZ(-80deg) translateY(0%);
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(1);
+  }
+  90% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}

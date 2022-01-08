@@ -1,0 +1,48 @@
+/* Colors */
+
+$background-color: radial-gradient(ellipse at center, #353138 0%, #1a181c 100%);
+
+/* NavBar variables */
+
+
+$azulito: #a4c2f4;
+$light-blue: #538beb;
+$background-navbar: #131313;//#030955;
+$foreground-navbar: #575757;
+$border-navbar: #FFFF;
+$boxshadow-navbar: linear-gradient(to right, #808080 0%, #6f6f6f 100%);//#726a79;
+$hover-background-navbar: rgb(231, 226, 226);//#313bc4;
+$hover-background-navbar-border: rgb(202, 196, 196);//#33398f;
+$hover-foreground-navbar: #504b53;
+$border-front-item: #131313;//#010535;
+$border-left-item: #131313;//#010741;
+
+$transformation-navbar: rotate(-35deg) skew(9deg, 5deg) translate(-0%,200%);
+$height-navbar-item: 2.5em;
+$width-navbar-item: 4em;
+$depth-navbar-item: 1em;
+
+$bottom-front-border: ($width-navbar-item+$depth-navbar-item)*(-0.5);
+$left-front-border: $width-navbar-item*0.5 - $depth-navbar-item;
+
+$top-left-border: $depth-navbar-item*0.5;
+$left-left-border: -$depth-navbar-item;
+
+
+$hover-separation: 0.9em;
+$boxshadow-separation: $depth-navbar-item*2;
+$boxshadow-item-separation: $depth-navbar-item*2;
+
+/* Checkbox variables */
+$label-height: calc(var(--checkbox-label-width) / 2);
+$color1: white;
+$color2: black;
+$head-size: calc(var(--checkbox-label-width) / 2);
+$character-color-primary: #0d3f5a;
+$character-color-secondary: #21526d;
+$body-color: linear-gradient(
+  to right bottom,
+  $character-color-secondary 25%,
+  $character-color-primary 45%
+);
+
