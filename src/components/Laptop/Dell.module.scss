@@ -1,0 +1,353 @@
+@use "sass:math";
+
+$laptop-size: 500px;
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+.laptop {
+  position: relative;
+  width: $laptop-size;
+  height: $laptop-size;
+}
+
+.laptop .monitor {
+  position: absolute;
+  border: $laptop-size*0.01 solid #4d4d4d;
+  border-radius: $laptop-size*0.01;
+  height: $laptop-size * 0.5;
+  background: #ffffff;
+  left: $laptop-size*0.025;
+  right: $laptop-size*0.025;
+  top: $laptop-size*0.07;
+
+  transform: perspective($laptop-size*2) rotateX(0deg);
+
+  animation: open-laptop-monitor 2s;
+}
+
+.laptop .monitor .monitor-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: $laptop-size*0.01;
+  bottom: 0;
+  border: $laptop-size * 0.01 solid #000000;
+  background: #262626;
+
+  animation: start-monitor 1s 5s forwards;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laptop .bottom_part {
+  position: absolute;
+  border: $laptop-size*0.01 solid #262626;
+  border-radius: $laptop-size*0.01;
+  height: $laptop-size * 0.5;
+  background: #262626;
+
+  left: -$laptop-size*0.02;
+  right: 0px;
+  bottom: 30px;
+
+  transform: perspective(1000px) rotateX(70deg);
+
+  animation: open-laptop-bottom-part 2s;
+}
+
+.laptop .keyboard {
+  padding: 7px;
+  padding-bottom: 3px;
+  background: #4d4d4d;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.laptop .keyboard img {
+  width: 100%;
+}
+
+.laptop .touchpad {
+  background: #4d4d4d;
+  width: 45px;
+  padding: 10px;
+  height: 17px;
+  margin-top: 6px;
+}
+
+.laptop .monitor-text {
+  opacity: 0;
+  -webkit-animation: ShowText 1s 8s forwards;
+  -o-animation: ShowText 1s 8s forwards;
+  animation: ShowText 1s 8s forwards;
+}
+
+@-webkit-keyframes open-laptop-monitor {
+  0% {
+    -webkit--transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    top: 36px;
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 14px;
+    right: 14px;
+  }
+}
+@-moz-keyframes open-laptop-monitor {
+  0% {
+    -moz-transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    top: 36px;
+  }
+  100% {
+    -moz-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 14px;
+    right: 14px;
+  }
+}
+@keyframes open-laptop-monitor {
+  0% {
+    -webkit-transform: perspective(1000px) rotateX(-89deg);
+    -moz-transform: perspective(1000px) rotateX(-89deg);
+    transform: perspective(1000px) rotateX(-89deg);
+    left: 0px;
+    right: 0px;
+    top: 70px;
+  }
+  55% {
+    top: 36px;
+  }
+  100% {
+    -webkit-transform: perspective(1000px) rotateX(15deg);
+    -moz-transform: perspective(1000px) rotateX(15deg);
+    transform: perspective(1000px) rotateX(15deg);
+    left: 14px;
+    right: 14px;
+  }
+}
+
+@keyframes open-laptop-bottom-part {
+  0% {
+    transform: perspective(1000px) rotateX(89deg);
+    bottom: 10px;
+  }
+  90% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 30px;
+    transform: perspective(1000px) rotateX(70deg);
+  }
+}
+
+@-webkit-keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+@-moz-keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+@keyframes start-monitor {
+  0% {
+    background: #262626;
+  }
+  100% {
+    background: #ffffff;
+  }
+}
+
+@-webkit-keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ShowText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// @use "sass:math";
+
+// @function strip-units($number) {
+//   @return math.div($number, ($number * 0 + 1));
+// }
+
+// $laptop-width: 600px;
+// $laptop-height: $laptop-width;
+// $laptop-area: strip-units($laptop-height) * strip-units($laptop-width);
+// $laptop-monitor-border: math.sqrt($laptop-area) * 0.02px;
+// $laptop-monitor-border-radius: math.sqrt($laptop-area) * 0.01px;
+
+// .laptop {
+//   position: relative;
+//   width: $laptop-width;
+//   height: $laptop-height;
+// }
+
+// .laptop .monitor {
+//   position: absolute;
+
+//   left: 0px; //$laptop-monitor-border;
+//   right: 0px;
+//   top: 0px;
+//   bottom: 50%;
+
+//   border: $laptop-monitor-border solid #4d4d4d;
+//   border-radius: $laptop-monitor-border-radius;
+
+//   //height: $laptop-height * 0.4;
+
+//   background: #ffffff;
+
+//   animation: open-laptop-monitor 2s;
+
+//   transform: perspective(1000px) rotateX(0deg);
+// }
+
+// .laptop .monitor .monitor-body {
+//   position: absolute;
+
+//   left: 0px; //$laptop-monitor-border;
+//   right: 0px;
+//   top: 0px;
+//   bottom: 0px;
+
+//   border: $laptop-monitor-border*0.5 solid #000000;
+
+//   background: #262626;
+//   animation: start-monitor 10s 3s forwards;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .laptop .bottom_part {
+//   position: absolute;
+//   left: 0;//-$laptop-monitor-border;
+//   right: 0px;
+//   top: 27%;
+
+//   border: $laptop-monitor-border solid #262626;
+//   border-radius: $laptop-monitor-border-radius;
+
+//   height: $laptop-height * 0.5;
+//   //width: $laptop-width;
+
+//   background: #262626;
+
+//   animation: open-laptop-bottom-part 2s;
+
+//   transform: perspective(1000px) rotateX(80deg);
+// }
+
+// .laptop .keyboard {
+//   padding: 7px;
+//   padding-bottom: 3px;
+//   background: #4d4d4d;
+//   margin-top: 5px;
+//   margin-left: 5px;
+//   margin-right: 5px;
+// }
+// .laptop .keyboard img {
+//   width: 100%;
+// }
+
+// .laptop .touchpad {
+//   background: #4d4d4d;
+//   width: 45px;
+//   padding: 10px;
+//   height: 17px;
+//   margin-top: 6px;
+// }
+
+// .monitor-text {
+//   opacity: 0;
+//   animation: ShowText 1s 8s forwards;
+// }
+
+// @keyframes open-laptop-monitor {
+//   0% {
+//     transform: perspective(1000px) rotateX(-89deg);
+//     bottom: 0px;
+//   }
+//   50% {
+//       bottom: 50%;
+//   }
+//   100% {
+//     transform: perspective(1000px) rotateX(0deg);
+//     bottom: 50%;
+//   }
+// }
+
+// @keyframes open-laptop-bottom-part {
+//   0% {
+//     transform: perspective(1000px) rotateX(89deg);
+//     top: 0px;
+//   }
+//   50%{
+//     top: 30%;
+//   }
+//   100% {
+//     transform: perspective(1000px) rotateX(80deg);
+//     top: 22%;
+//   }
+// }
+
+// @keyframes start-monitor {
+//   0% {
+//     background: #262626;
+//   }
+//   100% {
+//     background: #ffffff;
+//   }
+// }
+// @keyframes ShowText {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

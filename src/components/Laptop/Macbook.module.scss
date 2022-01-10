@@ -1,0 +1,489 @@
+$macbook-width: 80vw; //150px;
+$macbook-height: 50vh; //96px;
+$macbook-aspect-ratio: 1;
+$macbook-top: 0;//50%;
+$macbook-left: 50%;
+$macbook-transform: translate(-50%,10%);
+
+$macbook-margin: 0;//-400px 0 0 -400px;//-75px 0 0 -48px;
+
+$macbook-shadow-width: 60px;
+$macbook-shadow-height: 0px;
+$macbook-shadow-left: 40px;
+$macbook-shadow-top: 160px;
+$macbook-shadow-transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+$macbook-shadow-boxshadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+
+$macbook-inner-transform: rotateX(-30deg) rotateY(35deg) rotateZ(10deg);
+
+
+$macbook-screen-transform-origin: 50% 93px;
+$macbook-screen-transform: unset;//rotateX(20deg) rotateY(0deg) rotateZ(0deg);
+$macbook-screen-boxshadow: inset 0 3px 7px rgba(255, 255, 255, 0.5);
+
+$macbook-screen-logo-width: 20px;
+$macbook-screen-logo-height: 24px;
+$macbook-screen-logo-margin: -12px 0 0 -10px;
+$macbook-screen-logo-transform: rotateY(180deg) translateZ(0.1px);
+
+
+$macbook-screen-faceone-border-radius: 7px;
+$macbook-screen-faceone-transform: translateZ(2px);
+$macbook-screen-faceone-camera-width: 3px;
+$macbook-screen-faceone-camera-height: 3px;
+$macbook-screen-faceone-camera-top: 4px;
+$macbook-screen-faceone-camera-marginleft: -1.5px;
+
+$macbook-screen-faceone-display-width: 480px;//130px;
+$macbook-screen-faceone-display-height: 280px;//74px;
+
+
+$macbook-screen-faceone-display-margin: 10px;
+$macbook-screen-faceone-display-boxshadow: inset 0 0 2px rgba(0, 0, 0, 1);
+
+$macbook-screen-faceone-display-shade-width: 480px;//130px;
+$macbook-screen-faceone-display-shade-height: 280px;//74px;
+
+$macbook-screen-faceone-display-background-width: 480px;//300px;
+$macbook-screen-faceone-display-background-height: 280px;//200px;
+
+
+$macbook-screen-faceone-span-top: 85px;
+$macbook-screen-faceone-span-left: 57px;
+$macbook-screen-faceone-span-fontsize: 6px;
+
+$macbook-body-border-radius: 7px;
+$macbook-body-faceone-transform: translateZ(-2px);
+
+
+$macbook-body-touchpad-width: 40px;
+$macbook-body-touchpad-height: 31px;
+$macbook-body-touchpad-border-radius: 4px;
+$macbook-body-touchpad-margin: -44px 0 0 -18px;
+
+$macbook-body-keyboard-width: 480px;//130px;
+$macbook-body-keyboard-height: 280px;//45px;
+$macbook-body-keyboard-left: 0;//7px;
+$macbook-body-keyboard-top: 0px;//41px;
+$macbook-body-keyboard-border-radius: 4px;
+$macbook-body-keyboard-padding: 0 0 0 2px;
+
+$macbook-body-key-width: 20px;//6px;
+$macbook-body-key-height: 20px;//6px;
+$macbook-body-key-margin: 1px;
+$macbook-body-key-transform: translateZ(-100px);
+$macbook-body-key-border-radius: 2px;
+$macbook-body-key-boxshadow: 0 -2px 0 #222;
+$macbook-body-keyspace-width: 200px;//45px;
+$macbook-body-keyf-height: 20px;//3px;
+
+$macbook-body-pad-width: 100px;//5px;
+$macbook-body-pad-height: 100px;//5px;
+
+$macbook-body-pad-position: 20px;
+
+
+.macbook {
+  width: $macbook-width;
+  //height: $macbook-height;
+  aspect-ratio: $macbook-aspect-ratio;
+  position: absolute;
+  left: $macbook-left;
+  top: $macbook-top;
+  transform: $macbook-transform;
+  margin: $macbook-margin;
+  perspective: 1200px;
+}
+.shadow {
+  position: absolute;
+  width: $macbook-shadow-width;
+  height: $macbook-shadow-height;
+  left: $macbook-shadow-left;
+  top: $macbook-shadow-top;
+  transform: $macbook-shadow-transform;
+  box-shadow: $macbook-shadow-boxshadow;
+  animation: shadow infinite 7s ease;
+}
+.inner {
+  z-index: 20;
+  position: absolute;
+  width: $macbook-width;
+  height: $macbook-height;
+  aspect-ratio: $macbook-aspect-ratio;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  transform: $macbook-inner-transform;
+  //animation: rotate infinite 7s ease;
+}
+.screen {
+  width: $macbook-width;
+  height: $macbook-height;
+  aspect-ratio: $macbook-aspect-ratio;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 7px;
+  background: #ddd;
+  transform-style: preserve-3d;
+  transform-origin: $macbook-screen-transform-origin;
+  transform: $macbook-screen-transform;
+  //animation: lid-screen infinite 7s ease;
+  //   background-image: linear-gradient(
+  //     45deg,
+  //     rgba(0, 0, 0, 0.34) 0%,
+  //     rgba(0, 0, 0, 0) 100%
+  //   );
+  //   background-position: left bottom;
+  //   background-size: 300px 300px;
+  box-shadow: $macbook-screen-boxshadow;
+}
+.screen .logo {
+  position: absolute;
+  width: $macbook-screen-logo-width;
+  height: $macbook-screen-logo-height;
+  left: 50%;
+  top: 50%;
+  margin: $macbook-screen-logo-margin;
+  transform: $macbook-screen-logo-transform;
+}
+.screen .face-one {
+  width: $macbook-width;
+  height: $macbook-height;
+  aspect-ratio: $macbook-aspect-ratio;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: $macbook-screen-faceone-border-radius;
+  background: #d3d3d3;
+  transform: $macbook-screen-faceone-transform;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.screen .face-one .camera {
+  width: $macbook-screen-faceone-camera-width;
+  height: $macbook-screen-faceone-camera-height;
+  border-radius: 100%;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  top: $macbook-screen-faceone-camera-top;
+  margin-left: $macbook-screen-faceone-camera-marginleft;
+}
+.screen .face-one .display {
+  width: $macbook-screen-faceone-display-width;
+  height: $macbook-screen-faceone-display-height;
+  margin: $macbook-screen-faceone-display-margin;
+  background: black; //url("https://upload.wikimedia.org/wikipedia/en/9/98/MacOS_Monterey_Desktop.png") no-repeat center center #000;
+  background-size: 100% 100%;
+  border-radius: 1px;
+  position: relative;
+  box-shadow: $macbook-screen-faceone-display-boxshadow;
+}
+.screen .face-one .display .shade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $macbook-screen-faceone-display-shade-width;
+  height: $macbook-screen-faceone-display-shade-height;
+  background: linear-gradient(
+    -135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 47%,
+    rgba(255, 255, 255, 0) 48%
+  );
+  animation: macbook-screen-shade infinite 7s ease;
+  background-size: $macbook-screen-faceone-display-background-width $macbook-screen-faceone-display-background-height;
+  background-position: 0px 0px;
+}
+.screen .face-one span {
+  position: absolute;
+  top: $macbook-screen-faceone-span-top;
+  left: $macbook-screen-faceone-span-left;
+  font-size: $macbook-screen-faceone-span-fontsize;
+  color: #666;
+}
+.body {
+  width: $macbook-width;
+  height: $macbook-height;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: $macbook-body-border-radius;
+  background: #cbcbcb;
+  transform-style: preserve-3d;
+  transform-origin: 50% bottom;
+  transform: rotateX(-90deg);
+  animation: lid-body infinite 7s ease;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.body .face-one {
+  width: $macbook-width;
+  height: $macbook-height;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: $macbook-body-border-radius;
+  transform-style: preserve-3d;
+  background: #dfdfdf;
+  animation: lid-keyboard-area infinite 7s ease;
+  transform: $macbook-body-faceone-transform;
+  background-image: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.body .touchpad {
+  width: $macbook-body-touchpad-width;
+  height: $macbook-body-touchpad-height;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: $macbook-body-touchpad-border-radius;
+  margin: $macbook-body-touchpad-margin;
+  background: #cdcdcd;
+  background-image: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  box-shadow: inset 0 0 3px #888;
+}
+.body .keyboard {
+  width: $macbook-body-keyboard-width;
+  height: $macbook-body-keyboard-height;
+  position: absolute;
+  left: $macbook-body-keyboard-left;
+  top: $macbook-body-keyboard-top;
+  border-radius: $macbook-body-keyboard-border-radius;
+  transform-style: preserve-3d;
+  background: #cdcdcd;
+  background-image: linear-gradient(
+    30deg,
+    rgba(0, 0, 0, 0.24) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  box-shadow: inset 0 0 3px #777;
+  padding: $macbook-body-keyboard-padding;
+}
+.keyboard .key {
+  width: $macbook-body-key-width;
+  height: $macbook-body-key-height;
+  background: #444;
+  float: left;
+  margin: $macbook-body-key-margin;
+  transform: $macbook-body-key-transform;
+  border-radius: $macbook-body-key-border-radius;
+  box-shadow: $macbook-body-key-boxshadow;
+  //animation: keys infinite 7s ease;
+  cursor: pointer;
+}
+.key.space {
+  width: $macbook-body-keyspace-width;
+}
+.key.f {
+  height: $macbook-body-keyf-height;
+}
+.body .pad {
+  width: $macbook-body-pad-width;
+  height: $macbook-body-pad-height;
+  background: #333;
+  border-radius: 100%;
+  position: absolute;
+}
+.pad.one {
+  left: $macbook-body-pad-position;
+  top: $macbook-body-pad-position;
+}
+.pad.two {
+  right: $macbook-body-pad-position;
+  top: $macbook-body-pad-position;
+}
+.pad.three {
+  right: $macbook-body-pad-position;
+  bottom: $macbook-body-pad-position;
+}
+.pad.four {
+  left: $macbook-body-pad-position;
+  bottom: $macbook-body-pad-position;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+  }
+  5% {
+    transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+  }
+  60% {
+    transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+  }
+  65% {
+    transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+  }
+  80% {
+    transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+  }
+  85% {
+    transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+  }
+  87% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+  }
+}
+@keyframes lid-screen {
+  0% {
+    transform: rotateX(0deg);
+    background-position: left bottom;
+  }
+  5% {
+    transform: rotateX(50deg);
+    background-position: left bottom;
+  }
+  20% {
+    transform: rotateX(-90deg);
+    background-position: -$macbook-width top;
+  }
+  25% {
+    transform: rotateX(15deg);
+    background-position: left bottom;
+  }
+  30% {
+    transform: rotateX(-5deg);
+    background-position: right top;
+  }
+  38% {
+    transform: rotateX(5deg);
+    background-position: right top;
+  }
+  48% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  90% {
+    transform: rotateX(0deg);
+    background-position: right top;
+  }
+  100% {
+    transform: rotateX(0deg);
+    background-position: right center;
+  }
+}
+@keyframes lid-body {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+@keyframes lid-keyboard-area {
+  0% {
+    background-color: #dfdfdf;
+  }
+  50% {
+    background-color: #bbb;
+  }
+  100% {
+    background-color: #dfdfdf;
+  }
+}
+@keyframes macbook-screen-shade {
+  0% {
+    background-position: -20px 0px;
+  }
+  5% {
+    background-position: -40px 0px;
+  }
+  20% {
+    background-position: 200px 0;
+  }
+  50% {
+    background-position: -200px 0;
+  }
+  80% {
+    background-position: 0px 0px;
+  }
+  85% {
+    background-position: -30px 0;
+  }
+  90% {
+    background-position: -20px 0;
+  }
+  100% {
+    background-position: -20px 0px;
+  }
+}
+@keyframes keys {
+  0% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  5% {
+    box-shadow: 1 -1px 0 #222;
+  }
+  20% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  25% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  60% {
+    box-shadow: -1px 1px 0 #222;
+  }
+  80% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  85% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  87% {
+    box-shadow: 0 -2px 0 #222;
+  }
+  100% {
+    box-shadow: 0 -2px 0 #222;
+  }
+}
+@keyframes shadow {
+  0% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+  }
+  5% {
+    transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+    box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+  }
+  20% {
+    transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+  25% {
+    transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+    box-shadow: 0 0 35px 15px rgba(0, 0, 0, 0.1);
+  }
+  60% {
+    transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+    box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+  }
+}

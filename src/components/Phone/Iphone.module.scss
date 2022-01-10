@@ -67,15 +67,14 @@ $slab-join-top-transform: translate3D(60px, -1px, -1px);
   * {
     transform-style: preserve-3d;
   }
-  background: transparent;
 }
 #iphone {
   
   width: $width-iphone;
   height: $height-iphone;
   margin: $iphone-margin auto 0;
-  transform: rotate(-35deg) rotateY(35deg) rotateX(35deg) skew(-10deg, 5deg);
-  //transform: rotate(0deg) rotateY(45deg) rotateX(0deg);
+  //transform: rotate(-35deg) rotateY(35deg) rotateX(35deg) skew(-10deg, 5deg);
+  //transform: rotate(0deg) rotateY(0deg) rotateX(0deg);
   //animation: rotateiphone 15s infinite linear;
 }
 @keyframes rotateiphone {
@@ -121,6 +120,7 @@ $slab-join-top-transform: translate3D(60px, -1px, -1px);
   background: #fff;
   background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
   border-radius: $slab-border-radius;
+  z-index:-1;
 }
 .slab .back {
   background: #a3a3a3;
@@ -221,6 +221,7 @@ $slab-join-top-transform: translate3D(60px, -1px, -1px);
   background: #131313;
   background: linear-gradient(to right, #131313 0%, #2c2c2c 100%);
   transform: $slab-black-front-transform;
+  z-index:-1;
 }
 .black .thickness {
   border: 1px solid #131313;
@@ -531,6 +532,10 @@ $slab-join-top-transform: translate3D(60px, -1px, -1px);
   position: absolute;
   width: 100%;
   height: 100%;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
   //top: 328.2px;
   //width: 328.2px;
   // height: 218px;

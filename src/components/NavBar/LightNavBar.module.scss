@@ -1,0 +1,201 @@
+//@import "../../styles/fontawesome.scss";
+
+$mm-n: 8;
+$mm-item-size: 2.5em;//4.5em;
+$mm-menu-width: $mm-item-size * $mm-n;
+
+$white: hsl(215, 18%, 97%);
+$gray: hsl(215, 8%, 85%);
+$slate: hsl(160, 6%, 58%);
+$icon: hsl(0, 0%, 20%);//hsl(0, 0%, 79%);
+
+.mm-menu {
+  font-size: 1rem;
+  position: relative;
+  width: $mm-menu-width;
+  height: $mm-item-size;
+  border-radius: 0.15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $slate;
+  box-shadow: 0 -1px 0.3em rgba(#002, 0.2) inset,
+    0 -1px 1px rgba(#002, 0.03) inset;
+  // Screen Centering:
+  //margin: (- $mm-item-size * 0.5) auto 0;
+  //top: 50%;
+}
+
+.mm-item > svg::before {
+  display: block;
+  font-family: "FontAwesome";
+  font-size: 2em;
+  text-align: center;
+  line-height: $mm-item-size * 0.5;
+  color: $icon;
+  text-shadow: 0 -0.03em rgba(#000, 0.21), 0 0.03em 0.06em rgba(#fff, 0.5);
+}
+
+.mm-item {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  top: -0.25em;
+  float: left;
+  width: $mm-item-size;
+  height: $mm-item-size;
+  text-decoration: none;
+  border-radius: 0.15em;
+  transition: 250ms;
+  background: linear-gradient($white, $gray) 0 50%;
+  background-size: 100% 200%;
+  & > * {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    font-size: 2em;
+    text-align: center;
+    line-height: $mm-item-size * 0.5;
+    color: $icon;
+    text-shadow: 0 -0.03em rgba(#000, 0.21), 0 0.03em 0.06em rgba(#fff, 0.5);
+  }
+}
+
+.mm-item:hover {
+  top: -0.35em;
+  background-position: 0 0%;
+}
+
+.mm-item:focus,
+.mm-item:active {
+  outline: none;
+  top: -0.15em;
+  background-position: 0 100%;
+}
+
+.mm-item,
+.mm-item:first-of-type:focus,
+.mm-item:first-of-type:active,
+.mm-item:hover:focus + .mm-item,
+.mm-item:hover:active + .mm-item {
+  box-shadow: 1px 1px 0 0 rgba(#fff, 0.15) inset, 0 0 0 0 rgba(#000, 0) inset,
+    0.2em 0.2em 0.3em -0.07em rgba(#fff, 0.6) inset,
+    -0.2em -0.3em 0.3em -0.07em rgba(#000, 0.08) inset;
+}
+
+.mm-item:hover + .mm-item,
+.mm-item:focus,
+.mm-item:active {
+  box-shadow: 0 0.3em 0.3em -0.2em rgba(#fff, 0.6) inset,
+    1px 0 0 0 rgba(#000, 0.02) inset,
+    0.35em 0 0.3em -0.2em rgba(#002, 0.07) inset,
+    -0.2em -0.3em 0.3em -0.07em rgba(#000, 0.08) inset;
+}
+
+.mm-item:hover + .mm-item:focus {
+  box-shadow: 0 0.3em 0.3em -0.2em rgba(#fff, 0.6) inset,
+    1px 0 0 0 rgba(#000, 0.01) inset,
+    0.45em 0 0.3em -0.2em rgba(#002, 0.09) inset,
+    -0.2em -0.3em 0.3em -0.07em rgba(#000, 0.08) inset;
+}
+
+// *************** CAUTION *************** //
+// **** NOW ENTERING LONG SHADOW AREA **** //
+// **** USE FOR DISPLAY PURPOSES ONLY **** //
+// ************** THANK YOU ************** //
+
+.mm-item::after,
+.mm-item:last-of-type::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: 250ms;
+  transform: rotate(-25deg);
+}
+
+.mm-item::after {
+  top: $mm-item-size + 0.2em;
+  left: 0;
+  width: 90.8%;
+  height: 110%;
+  background: linear-gradient(205deg, rgba(#002, 0.3), rgba(#fff, 0));
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.mm-item:hover::after {
+  top: $mm-item-size + 0.3em;
+  height: 125%;
+}
+
+.mm-item:focus::after,
+.mm-item:active::after {
+  top: $mm-item-size + 0.1em;
+  height: 95%;
+}
+
+.mm-item:last-of-type::before {
+  top: 1px;
+  right: 0;
+  width: 42.4%;
+  height: 160%;
+  background: linear-gradient(115deg, rgba(#002, 0.3), rgba(#fff, 0));
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+
+.mm-item:last-of-type:hover::before {
+  width: 44.4%;
+  height: 180%;
+}
+
+.mm-item:last-of-type:focus::before,
+.mm-item:last-of-type:active::before {
+  width: 41.4%;
+  height: 140%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .mm-item::after {
+    width: 91%;
+  }
+}
+
+// ******************************* //
+// The following code is simply a technique I just came up with which uses a media query to specifically style certain elements differently when it is in the Codepen preview mode.
+// In this case I use it to increase the overall size of the UI Bar, add the hover state effect to the 1st button, and add the pressed effect to the 3rd button.
+
+@media only screen and (height: 300px) {
+  .mm-menu {
+    font-size: 1.5rem;
+  }
+  .mm-item:nth-of-type(1) {
+    top: -0.35em;
+    background-position: 0 0%;
+    &::after {
+      top: $mm-item-size + 0.3em;
+    }
+  }
+  .mm-item:nth-of-type(2) {
+    box-shadow: 0 0.2em 0.3em -2px rgba(#fff, 0.6) inset,
+      -1px -1px 0 0 rgba(#000, 0.03) inset,
+      0.3em 0 0.2em -2px rgba(#000, 0.05) inset,
+      -0.2em -0.2em 0.3em -2px rgba(#000, 0.08) inset;
+  }
+  .mm-item:nth-of-type(3) {
+    top: -0.15em;
+    background-position: 0 100%;
+    box-shadow: 0 0.2em 0.3em -2px rgba(#fff, 0.6) inset,
+      -1px -1px 0 0 rgba(#000, 0.03) inset,
+      0.3em 0 0.2em -2px rgba(#000, 0.05) inset,
+      -0.2em -0.2em 0.3em -2px rgba(#000, 0.08) inset;
+    &::after {
+      top: $mm-item-size + 0.1em;
+    }
+  }
+  .mm-item:last-of-type::before {
+    width: 43.4%;
+  }
+}
